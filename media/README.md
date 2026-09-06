@@ -1,7 +1,7 @@
 # media/
 
-Jim’s original `GHE Demo Hires.mp4` is published as the release asset:
+Jim’s original `GHE Demo Hires.mp4` streams from branch `media-bin` as `teaser.mp4`:
 
-https://github.com/jwhowa/technodaddy/releases/download/original-video/GHE-Demo-Hires-original.mp4
+https://raw.githubusercontent.com/jwhowa/technodaddy/media-bin/teaser.mp4
 
-(Kept out of the Pages tree so builds succeed; same bytes as `/workspace/course-ops/raw/GHE Demo Hires.mp4`.)
+(Same bytes as workspace raw. Kept off `main` so GitHub Pages builds succeed.)
