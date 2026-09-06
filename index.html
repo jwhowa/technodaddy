@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Technodaddy — Tech and AI in plain English</title>
-  <meta name="description" content="Technodaddy with Jim Howard: plain-English lessons on tech and AI for beginners and busy people. Free video. Courses coming." />
+  <title>Technodaddy — Tech made plain</title>
+  <meta name="description" content="Technodaddy with Jim Howard: AI and modern tools in plain English for beginners. Free video. Waitlist open soon." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --ink: #14212b;
@@ -21,316 +21,202 @@
       --shadow: 0 18px 50px rgba(20, 33, 43, 0.12);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: "DM Sans", system-ui, sans-serif;
       background:
-        radial-gradient(900px 420px at 10% -10%, rgba(15,110,86,0.08), transparent 60%),
-        radial-gradient(700px 380px at 100% 0%, rgba(196,92,38,0.08), transparent 55%),
+        radial-gradient(900px 420px at 8% -8%, rgba(15,110,86,0.09), transparent 55%),
         var(--paper);
       color: var(--ink);
       line-height: 1.6;
     }
-    a { color: var(--accent); }
-    .wrap { width: min(980px, calc(100% - 2rem)); margin-inline: auto; }
-    .top {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.1rem 0;
-    }
+    .wrap { width: min(820px, calc(100% - 2rem)); margin-inline: auto; }
     .brand {
+      padding: 1.25rem 0 0.35rem;
       font-family: "Fraunces", Georgia, serif;
-      font-weight: 700; font-size: 1.45rem; letter-spacing: -0.02em;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      color: var(--accent-deep);
     }
-    .pill {
-      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.08em; color: var(--accent-deep);
-      background: #e3f2ec; padding: 0.4rem 0.7rem; border-radius: 999px;
-      border: 1px solid #c5e2d7;
+    .hero-band {
+      margin: 0.5rem 0 1.5rem;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #ddd;
+      max-height: 220px;
     }
-    .hero {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 1.5rem;
-      align-items: center;
-      padding: 1rem 0 2.5rem;
-    }
-    @media (max-width: 860px) {
-      .hero { grid-template-columns: 1fr; }
-    }
-    .eyebrow {
-      color: var(--warm); font-weight: 700; font-size: 0.85rem;
-      text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.8rem;
+    .hero-band img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
     }
     h1 {
       font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(2.2rem, 5vw, 3.35rem);
-      line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 1rem;
+      font-size: clamp(1.9rem, 4.6vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin: 0 0 0.85rem;
     }
-    .lede {
-      font-size: 1.12rem; color: var(--muted); max-width: 36rem; margin: 0 0 1.4rem;
+    .hook {
+      font-size: 1.12rem;
+      color: var(--muted);
+      margin: 0 0 0.85rem;
     }
-    .row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
-    .btn {
-      display: inline-block; text-decoration: none; font-weight: 700;
-      padding: 0.9rem 1.2rem; border-radius: 12px; border: 2px solid transparent;
-    }
-    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px rgba(15,110,86,0.25); }
-    .btn-primary:hover { background: var(--accent-deep); }
-    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-    .btn-disabled {
-      background: #d4cdc1; color: #6a6358; cursor: not-allowed;
-      border: 2px dashed #9f9688;
-    }
-    .hero-art {
-      border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
-      box-shadow: var(--shadow); background: #ddd;
-      aspect-ratio: 3 / 2;
-    }
-    .hero-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    section { padding: 2.4rem 0; }
-    h2 {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(1.55rem, 3vw, 1.9rem);
-      margin: 0 0 0.85rem; letter-spacing: -0.02em;
-    }
-    .section-intro { color: var(--muted); max-width: 40rem; margin: 0 0 1.25rem; }
-    .about-grid {
-      display: grid; gap: 1rem;
-      grid-template-columns: 1fr 1fr;
-    }
-    @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
-    .card {
-      background: var(--card); border: 1px solid var(--line);
-      border-radius: 16px; padding: 1.25rem 1.35rem;
-      box-shadow: 0 8px 24px rgba(20,33,43,0.04);
-    }
-    .card h3 {
-      margin: 0 0 0.55rem;
-      font-family: "Fraunces", Georgia, serif;
-      font-size: 1.15rem;
-    }
-    .card p { margin: 0; color: var(--muted); }
-    .diagram {
-      margin-top: 1.25rem;
-      border-radius: 18px; overflow: hidden;
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      background: #fff;
-    }
-    .diagram img { width: 100%; display: block; }
-    .diagram .cap {
-      padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--muted);
-      border-top: 1px solid var(--line); background: var(--card);
+    .proof {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--ink);
+      background: #eaf4ef;
+      border: 1px solid #cfe4da;
+      border-radius: 999px;
+      display: inline-block;
+      padding: 0.45rem 0.85rem;
+      margin: 0 0 1.5rem;
     }
     .player {
-      margin-top: 1rem; background: #0d141a; border-radius: 16px; overflow: hidden;
-      border: 1px solid #243040; box-shadow: var(--shadow);
+      margin: 0 0 1.5rem;
+      background: #0d141a;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #243040;
+      box-shadow: var(--shadow);
     }
-    .player video { width: 100%; display: block; background: #000; max-height: 540px; }
+    .player video {
+      width: 100%;
+      display: block;
+      background: #000;
+      min-height: 280px;
+      max-height: 520px;
+    }
     .player .cap {
-      padding: 0.8rem 1rem; color: #b7c0c8; font-size: 0.85rem;
+      padding: 0.7rem 1rem;
+      color: #b7c0c8;
+      font-size: 0.82rem;
       border-top: 1px solid #243040;
     }
-    .sku {
-      display: grid; gap: 1.1rem;
-      grid-template-columns: 1.45fr 0.85fr; align-items: stretch;
-    }
-    @media (max-width: 720px) { .sku { grid-template-columns: 1fr; } }
-    .price {
-      font-family: "Fraunces", Georgia, serif;
-      font-size: 2.5rem; margin: 0; color: var(--accent);
-    }
-    .fine { color: var(--muted); font-size: 0.95rem; }
-    .buy-panel {
-      background: linear-gradient(180deg, #eaf6f1, #f7fbf9);
-      border: 1px solid #c5e2d7;
+    .cta {
+      background: var(--card);
+      border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 1.25rem;
-      text-align: left;
+      padding: 1.2rem 1.25rem;
+      box-shadow: 0 8px 24px rgba(20,33,43,0.04);
+      margin-bottom: 1.25rem;
     }
-    .legal {
-      font-size: 0.9rem; color: var(--muted);
-      background: #efe8dc; border-radius: 14px; padding: 1.1rem 1.2rem;
+    .cta h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.35rem;
+      margin: 0 0 0.45rem;
+    }
+    .cta p { margin: 0 0 0.9rem; color: var(--muted); font-size: 0.98rem; }
+    .waitlist {
+      display: flex; flex-wrap: wrap; gap: 0.55rem;
+    }
+    .waitlist input[type="email"] {
+      flex: 1 1 220px;
+      min-width: 0;
+      padding: 0.85rem 0.95rem;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      font: inherit;
+      background: #fff;
+    }
+    .waitlist button {
+      padding: 0.85rem 1.15rem;
+      border-radius: 12px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font: inherit;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(15,110,86,0.22);
+    }
+    .waitlist button:hover { background: var(--accent-deep); }
+    .buy-off {
+      margin-top: 0.85rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .buy-off a {
+      color: #6a6358;
+      text-decoration: none;
+      border-bottom: 1px dashed #9f9688;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+    .soft {
+      font-size: 0.92rem;
+      color: var(--muted);
+      background: #efe8dc;
       border: 1px solid #e0d6c6;
-    }
-    .legal strong { color: var(--ink); }
-    .legal p { margin: 0 0 0.7rem; }
-    .legal p:last-child { margin: 0; }
-    .note {
-      margin-top: 0.8rem; font-size: 0.82rem; color: var(--warm); font-weight: 700;
+      border-radius: 14px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 1.75rem;
     }
     footer {
-      padding: 2rem 0 3rem; border-top: 1px solid var(--line);
-      color: var(--muted); font-size: 0.88rem;
+      padding: 0 0 2.75rem;
+      border-top: 1px solid var(--line);
+      padding-top: 1.1rem;
+      color: var(--muted);
+      font-size: 0.84rem;
     }
-    .steps {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem;
-      margin-top: 1rem;
-    }
-    @media (max-width: 720px) { .steps { grid-template-columns: 1fr; } }
-    .step {
-      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-      padding: 1rem 1.05rem;
-    }
-    .step .n {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 1.6rem; height: 1.6rem; border-radius: 999px;
-      background: var(--accent); color: #fff; font-size: 0.8rem; font-weight: 700;
-      margin-bottom: 0.55rem;
-    }
-    .step strong { display: block; margin-bottom: 0.25rem; }
-    .step span { color: var(--muted); font-size: 0.92rem; }
+    .note { font-size: 0.8rem; color: var(--warm); font-weight: 700; margin-top: 0.55rem; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="top">
-      <div class="brand">Technodaddy</div>
-      <div class="pill">Since 1995 · plain English</div>
+    <div class="brand">Technodaddy</div>
+
+    <div class="hero-band" aria-hidden="true">
+      <img src="assets/hero.jpg" alt="" width="1536" height="1024" />
     </div>
 
-    <header class="hero">
-      <div>
-        <p class="eyebrow">Learning academy</p>
-        <h1>Tech and AI, explained like a human being.</h1>
-        <p class="lede">
-          Technical stuff does not have to sound like a foreign language.
-          Technodaddy is Jim Howard’s learning academy for beginners who want AI and modern tools
-          explained in plain English — the same way a patient teacher walks a friend through
-          something new at the kitchen table.
-        </p>
-        <div class="row">
-          <a class="btn btn-primary" href="#video">Watch the free video</a>
-          <a class="btn btn-ghost" href="#course">See what is coming next</a>
-        </div>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <img src="assets/hero.jpg" alt="" width="1536" height="1024" />
-      </div>
-    </header>
+    <h1>Tech made plain for people who are not engineers.</h1>
+    <p class="hook">
+      Technical stuff does not have to sound like a foreign language.
+      Technodaddy is Jim Howard’s learning academy for beginners who want AI and modern tools
+      explained in plain English — the same way a patient teacher walks a friend through
+      something new at the kitchen table.
+    </p>
+    <div class="proof">486 installs → Director of Enablement, Radiology Partners · name since 1995</div>
 
-    <section id="about">
-      <h2>About Technodaddy</h2>
-      <p class="section-intro">
-        Jim started by twisting screwdrivers and installing 486 PCs when “getting online” still meant
-        a stack of disks and a prayer. Decades later he is Director of Enablement at Radiology Partners,
-        where his job is still the same at heart: take hard technical ideas and make them clear for
-        people who are not engineers. He has owned the Technodaddy name since 1995 because that is the
-        voice he brings — deep experience, no jargon theater, and respect for the learner.
+    <div class="player">
+      <video controls playsinline preload="metadata">
+        <source src="media/teaser.mp4" type="video/mp4" />
+        Your browser does not support embedded video.
+      </video>
+      <div class="cap">Jim’s original recording · free · no Staff edit cuts</div>
+    </div>
+
+    <section class="cta" id="waitlist">
+      <h2>Join the waitlist</h2>
+      <p>
+        Get a note when the next plain-English lesson is ready.
+        One list. No spam theater.
       </p>
-      <div class="about-grid">
-        <div class="card">
-          <h3>Where it started</h3>
-          <p>
-            Screwdrivers, 486 installs, and the early internet when nothing was automatic.
-            That hands-on start is why Jim still refuses to teach with buzzwords.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Where he is now</h3>
-          <p>
-            As Director of Enablement at Radiology Partners, he helps real people adopt complex systems.
-            Technodaddy is that same craft for beginners and busy teams starting with AI.
-          </p>
-        </div>
-      </div>
-      <div class="diagram">
-        <img src="assets/tech-made-plain.jpg" alt="Diagram: messy jargon becomes Learn, Try, Teach" width="1536" height="1024" />
-        <div class="cap">The whole method in one picture: cut the tangle, then Learn · Try · Teach.</div>
-      </div>
+      <form class="waitlist" action="#" method="post" onsubmit="return false;">
+        <label class="visually-hidden" for="email" style="position:absolute;left:-9999px;">Email</label>
+        <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
+        <button type="submit">Join the waitlist</button>
+      </form>
+      <p class="note">Waitlist capture is preview-only until Jim green-lights a real list.</p>
+      <p class="buy-off">Paid lesson via Stripe Checkout: <a href="#" aria-disabled="true">Buy — off</a></p>
     </section>
 
-    <section id="method">
-      <h2>How the lessons work</h2>
-      <p class="section-intro">
-        Every lesson follows the same simple path so you always know where you are.
-      </p>
-      <div class="steps">
-        <div class="step">
-          <div class="n">1</div>
-          <strong>Learn</strong>
-          <span>Hear the idea in plain English, with no ceremony.</span>
-        </div>
-        <div class="step">
-          <div class="n">2</div>
-          <strong>Try</strong>
-          <span>See it on screen so the concept sticks.</span>
-        </div>
-        <div class="step">
-          <div class="n">3</div>
-          <strong>Teach</strong>
-          <span>Leave able to explain it to someone else.</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="video">
-      <h2>Free video</h2>
-      <p class="section-intro">
-        Start with Jim’s original recording. This is a free lead magnet, not a paid product.
-        No Staff edit cuts were used on this page.
-      </p>
-      <div class="player">
-        <video controls playsinline preload="metadata">
-          <source src="media/teaser.mp4" type="video/mp4" />
-          Your browser does not support embedded video.
-        </video>
-        <div class="cap">Original GHE Demo Hires · free · checkout is off</div>
-      </div>
-    </section>
-
-    <section id="course">
-      <h2>What comes next</h2>
-      <div class="card sku">
-        <div>
-          <h3 style="margin:0 0 0.5rem;font-family:Fraunces,Georgia,serif;">AI in Plain English</h3>
-          <p class="fine" style="margin:0 0 0.9rem;">
-            One funnel for beginners and early business buyers.
-            When Jim green-lights a paid lesson, checkout will use Stripe only so you pay
-            card-processing fees and nothing else.
-          </p>
-          <ul class="fine">
-            <li>Day-0: free video on this page</li>
-            <li>Next: one paid starter pack, when he is ready</li>
-            <li>Personal-use digital license only</li>
-          </ul>
-        </div>
-        <div class="buy-panel">
-          <p class="price">$—</p>
-          <p class="fine" style="margin:0 0 0.9rem;">Stripe Checkout · processor fees only · not live</p>
-          <a class="btn btn-disabled" href="#" aria-disabled="true" onclick="return false;">Buy — coming soon</a>
-          <p class="note">Checkout stays off until Jim says yes through Sylas.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="legal">
-        <p>
-          <strong>Important:</strong>
-          Technodaddy courses are educational. They are not medical, legal, financial, or professional
-          advice, and they are not affiliated with Radiology Partners’ clinical work.
-          Watch, learn, and use your own judgment — or ask a qualified professional when a real
-          decision is on the line.
-        </p>
-        <p>
-          <strong>License (draft):</strong>
-          You get a personal-use digital license only. You may stream or download the materials for
-          your own learning. You may not redistribute them, resell them, share login credentials, or
-          post them publicly. Jim Howard keeps all rights in the scripts, performance, face, and voice.
-        </p>
-        <p>
-          <strong>Refund (draft):</strong>
-          If you have not accessed or downloaded the files, you can ask for a refund within 14 days.
-          After you access the files, sales are final except when delivery fails and we can verify it.
-        </p>
-      </div>
-    </section>
+    <div class="soft">
+      Technodaddy courses are educational. They are not medical, legal, financial, or professional
+      advice, and they are not affiliated with Radiology Partners’ clinical work.
+      Watch, learn, and use your own judgment — or ask a qualified professional when a real
+      decision is on the line. No outcome guarantees.
+    </div>
 
     <footer>
-      <div>© Technodaddy · Jim Howard</div>
-      <div style="margin-top:0.35rem">Preview on GitHub Pages · Stripe Checkout off · one page, one path</div>
+      Preview only · Jim points technodaddy.com when ready · Stripe-direct later · no marketplace fees
     </footer>
   </div>
 </body>
