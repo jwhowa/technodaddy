@@ -3,48 +3,184 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Technodaddy — AI &amp; tech in plain English</title>
-  <meta name="description" content="Technodaddy: plain-English tech and AI lessons for beginners and busy people. Free teaser. Courses coming." />
+  <title>Technodaddy — Tech and AI in plain English</title>
+  <meta name="description" content="Technodaddy with Jim Howard: plain-English lessons on tech and AI for beginners and busy people. Free video. Courses coming." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #14212b; --paper: #f7f4ee; --card: #ffffff;
-      --accent: #0f6e56; --accent-2: #c45c26; --line: #d9d2c5; --muted: #5c6670;
+      --ink: #14212b;
+      --paper: #f6f1e8;
+      --card: #fffdf8;
+      --accent: #0f6e56;
+      --accent-deep: #0a4f3d;
+      --warm: #c45c26;
+      --line: #d8d0c3;
+      --muted: #5a6470;
+      --shadow: 0 18px 50px rgba(20, 33, 43, 0.12);
     }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: "DM Sans", system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.55; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      background:
+        radial-gradient(900px 420px at 10% -10%, rgba(15,110,86,0.08), transparent 60%),
+        radial-gradient(700px 380px at 100% 0%, rgba(196,92,38,0.08), transparent 55%),
+        var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
     a { color: var(--accent); }
-    .wrap { width: min(920px, calc(100% - 2rem)); margin-inline: auto; }
-    .top { display: flex; justify-content: space-between; align-items: center; padding: 1.1rem 0; border-bottom: 1px solid var(--line); }
-    .brand { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 1.35rem; letter-spacing: -0.02em; }
-    .pill { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent); background: #e4f3ee; padding: 0.35rem 0.65rem; border-radius: 999px; }
-    header.hero { padding: 3.25rem 0 2rem; }
-    .eyebrow { color: var(--accent-2); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.75rem; }
-    h1 { font-family: "Fraunces", Georgia, serif; font-size: clamp(2.1rem, 5vw, 3.2rem); line-height: 1.12; letter-spacing: -0.03em; margin: 0 0 1rem; }
-    .lede { font-size: 1.15rem; color: var(--muted); max-width: 42rem; margin: 0 0 1.5rem; }
+    .wrap { width: min(980px, calc(100% - 2rem)); margin-inline: auto; }
+    .top {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 0;
+    }
+    .brand {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 700; font-size: 1.45rem; letter-spacing: -0.02em;
+    }
+    .pill {
+      font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent-deep);
+      background: #e3f2ec; padding: 0.4rem 0.7rem; border-radius: 999px;
+      border: 1px solid #c5e2d7;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 1.5rem;
+      align-items: center;
+      padding: 1rem 0 2.5rem;
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    .eyebrow {
+      color: var(--warm); font-weight: 700; font-size: 0.85rem;
+      text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.8rem;
+    }
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2.2rem, 5vw, 3.35rem);
+      line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 1rem;
+    }
+    .lede {
+      font-size: 1.12rem; color: var(--muted); max-width: 36rem; margin: 0 0 1.4rem;
+    }
     .row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
-    .btn { display: inline-block; text-decoration: none; font-weight: 700; padding: 0.85rem 1.15rem; border-radius: 10px; border: 2px solid transparent; }
-    .btn-primary { background: var(--accent); color: #fff; }
+    .btn {
+      display: inline-block; text-decoration: none; font-weight: 700;
+      padding: 0.9rem 1.2rem; border-radius: 12px; border: 2px solid transparent;
+    }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 8px 20px rgba(15,110,86,0.25); }
+    .btn-primary:hover { background: var(--accent-deep); }
     .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
-    .btn-disabled { background: #cfc8bb; color: #6b6458; cursor: not-allowed; border: 2px dashed #9e9586; }
-    .player { margin: 2rem 0 0; background: #0d141a; border-radius: 14px; overflow: hidden; border: 1px solid #243040; box-shadow: 0 18px 40px rgba(20,33,43,0.12); }
-    .player video { width: 100%; display: block; background: #000; max-height: 520px; }
-    .player .cap { padding: 0.75rem 1rem; color: #b7c0c8; font-size: 0.85rem; border-top: 1px solid #243040; }
-    section { padding: 2.25rem 0; }
-    h2 { font-family: "Fraunces", Georgia, serif; font-size: 1.6rem; margin: 0 0 0.75rem; letter-spacing: -0.02em; }
-    .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 1.25rem 1.35rem; }
-    .about-grid { display: grid; gap: 1rem; grid-template-columns: 1fr 1fr; }
+    .btn-disabled {
+      background: #d4cdc1; color: #6a6358; cursor: not-allowed;
+      border: 2px dashed #9f9688;
+    }
+    .hero-art {
+      border-radius: 18px; overflow: hidden; border: 1px solid var(--line);
+      box-shadow: var(--shadow); background: #ddd;
+      aspect-ratio: 3 / 2;
+    }
+    .hero-art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    section { padding: 2.4rem 0; }
+    h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(1.55rem, 3vw, 1.9rem);
+      margin: 0 0 0.85rem; letter-spacing: -0.02em;
+    }
+    .section-intro { color: var(--muted); max-width: 40rem; margin: 0 0 1.25rem; }
+    .about-grid {
+      display: grid; gap: 1rem;
+      grid-template-columns: 1fr 1fr;
+    }
     @media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
-    .sku { display: grid; gap: 1rem; grid-template-columns: 1.4fr 0.8fr; align-items: start; }
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 16px; padding: 1.25rem 1.35rem;
+      box-shadow: 0 8px 24px rgba(20,33,43,0.04);
+    }
+    .card h3 {
+      margin: 0 0 0.55rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.15rem;
+    }
+    .card p { margin: 0; color: var(--muted); }
+    .diagram {
+      margin-top: 1.25rem;
+      border-radius: 18px; overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+    .diagram img { width: 100%; display: block; }
+    .diagram .cap {
+      padding: 0.8rem 1rem; font-size: 0.88rem; color: var(--muted);
+      border-top: 1px solid var(--line); background: var(--card);
+    }
+    .player {
+      margin-top: 1rem; background: #0d141a; border-radius: 16px; overflow: hidden;
+      border: 1px solid #243040; box-shadow: var(--shadow);
+    }
+    .player video { width: 100%; display: block; background: #000; max-height: 540px; }
+    .player .cap {
+      padding: 0.8rem 1rem; color: #b7c0c8; font-size: 0.85rem;
+      border-top: 1px solid #243040;
+    }
+    .sku {
+      display: grid; gap: 1.1rem;
+      grid-template-columns: 1.45fr 0.85fr; align-items: stretch;
+    }
     @media (max-width: 720px) { .sku { grid-template-columns: 1fr; } }
-    .price { font-family: "Fraunces", Georgia, serif; font-size: 2.4rem; margin: 0; color: var(--accent); }
-    .fine { color: var(--muted); font-size: 0.9rem; }
-    .legal { font-size: 0.85rem; color: var(--muted); background: #efeae1; border-radius: 12px; padding: 1rem 1.1rem; }
+    .price {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 2.5rem; margin: 0; color: var(--accent);
+    }
+    .fine { color: var(--muted); font-size: 0.95rem; }
+    .buy-panel {
+      background: linear-gradient(180deg, #eaf6f1, #f7fbf9);
+      border: 1px solid #c5e2d7;
+      border-radius: 16px;
+      padding: 1.25rem;
+      text-align: left;
+    }
+    .legal {
+      font-size: 0.9rem; color: var(--muted);
+      background: #efe8dc; border-radius: 14px; padding: 1.1rem 1.2rem;
+      border: 1px solid #e0d6c6;
+    }
     .legal strong { color: var(--ink); }
-    footer { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
-    .note { margin-top: 0.75rem; font-size: 0.8rem; color: var(--accent-2); font-weight: 600; }
+    .legal p { margin: 0 0 0.7rem; }
+    .legal p:last-child { margin: 0; }
+    .note {
+      margin-top: 0.8rem; font-size: 0.82rem; color: var(--warm); font-weight: 700;
+    }
+    footer {
+      padding: 2rem 0 3rem; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 0.88rem;
+    }
+    .steps {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 720px) { .steps { grid-template-columns: 1fr; } }
+    .step {
+      background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+      padding: 1rem 1.05rem;
+    }
+    .step .n {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1.6rem; height: 1.6rem; border-radius: 999px;
+      background: var(--accent); color: #fff; font-size: 0.8rem; font-weight: 700;
+      margin-bottom: 0.55rem;
+    }
+    .step strong { display: block; margin-bottom: 0.25rem; }
+    .step span { color: var(--muted); font-size: 0.92rem; }
   </style>
 </head>
 <body>
@@ -55,90 +191,142 @@
     </div>
 
     <header class="hero">
-      <p class="eyebrow">Learning academy</p>
-      <h1>Tech and AI, explained like a human.</h1>
-      <p class="lede">
-        Started twisting screwdrivers and installing 486 PCs.
-        Now Director of Enablement at Radiology Partners —
-        and still the same grey-beard habit: make hard tech plain for non-technical people.
-        Older adults, curious beginners, teams just starting with AI.
-        No jargon theater. No outcome guarantees. Just clear lessons.
-      </p>
-      <div class="row">
-        <a class="btn btn-primary" href="#teaser">Watch the free video</a>
-        <a class="btn btn-ghost" href="#course">Join the waitlist (coming)</a>
+      <div>
+        <p class="eyebrow">Learning academy</p>
+        <h1>Tech and AI, explained like a human being.</h1>
+        <p class="lede">
+          Jim Howard started by twisting screwdrivers and installing 486 PCs.
+          Today he is Director of Enablement at Radiology Partners, and he still teaches
+          the same way: take a hard idea apart, put it back together in plain English,
+          and leave people able to use it.
+        </p>
+        <div class="row">
+          <a class="btn btn-primary" href="#video">Watch the free video</a>
+          <a class="btn btn-ghost" href="#course">See what is coming next</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img src="assets/hero.jpg" alt="" width="1536" height="1024" />
       </div>
     </header>
 
     <section id="about">
       <h2>About Technodaddy</h2>
+      <p class="section-intro">
+        This is not a corporate LMS and it is not startup theater.
+        It is a grey-beard teacher who has lived the work and knows how to make it clear.
+      </p>
       <div class="about-grid">
         <div class="card">
-          <h3 style="margin:0 0 0.5rem;font-family:Fraunces,Georgia,serif;">Where it started</h3>
-          <p class="fine" style="margin:0;">
-            Jim Howard’s career began on the floor with a screwdriver — building and installing
-            486 PCs when “IT” still meant dust and ribbon cables. That hands-on start never left:
-            if you can’t explain it without the buzzwords, you don’t own it yet.
+          <h3>Where it started</h3>
+          <p>
+            Jim’s career began on the floor with a screwdriver, building and installing
+            486 machines when “IT” still meant ribbon cables and dust.
+            That hands-on start never left. If you cannot explain a system without the buzzwords,
+            you do not own it yet.
           </p>
         </div>
         <div class="card">
-          <h3 style="margin:0 0 0.5rem;font-family:Fraunces,Georgia,serif;">Where he is now</h3>
-          <p class="fine" style="margin:0;">
-            Today he’s Director of Enablement at Radiology Partners, helping real people adopt
-            complex systems. Technodaddy is that same muscle for everyone else — grey-beard
-            plain English for AI and tech, no ceremony.
+          <h3>Where he is now</h3>
+          <p>
+            As Director of Enablement at Radiology Partners, Jim helps real people adopt
+            complex systems without drowning in jargon.
+            Technodaddy brings that same craft to everyone else: older adults, curious beginners,
+            and teams that are just getting started with AI.
           </p>
+        </div>
+      </div>
+      <div class="diagram">
+        <img src="assets/tech-made-plain.jpg" alt="Diagram: messy jargon becomes Learn, Try, Teach" width="1536" height="1024" />
+        <div class="cap">The whole method in one picture: cut the tangle, then Learn · Try · Teach.</div>
+      </div>
+    </section>
+
+    <section id="method">
+      <h2>How the lessons work</h2>
+      <p class="section-intro">
+        Every lesson follows the same simple path so you always know where you are.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <strong>Learn</strong>
+          <span>Hear the idea in plain English, with no ceremony.</span>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <strong>Try</strong>
+          <span>See it on screen so the concept sticks.</span>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <strong>Teach</strong>
+          <span>Leave able to explain it to someone else.</span>
         </div>
       </div>
     </section>
 
-    <section id="teaser">
+    <section id="video">
       <h2>Free video</h2>
-      <p class="fine">Lead magnet — Jim’s original recording. Not a paid SKU. No Staff edit passes.</p>
+      <p class="section-intro">
+        Start with Jim’s original recording. This is a free lead magnet, not a paid product.
+        No Staff edit cuts were used on this page.
+      </p>
       <div class="player">
         <video controls playsinline preload="metadata">
           <source src="media/teaser.mp4" type="video/mp4" />
-          Your browser doesn’t support embedded video.
+          Your browser does not support embedded video.
         </video>
-        <div class="cap">Original GHE Demo Hires · free · checkout off</div>
+        <div class="cap">Original GHE Demo Hires · free · checkout is off</div>
       </div>
     </section>
 
     <section id="course">
-      <h2>First course (Day-0)</h2>
+      <h2>What comes next</h2>
       <div class="card sku">
         <div>
-          <h3 style="margin:0 0 0.4rem;font-family:Fraunces,Georgia,serif;">AI in Plain English — starter pack</h3>
+          <h3 style="margin:0 0 0.5rem;font-family:Fraunces,Georgia,serif;">AI in Plain English</h3>
           <p class="fine" style="margin:0 0 0.9rem;">
-            One funnel. One CTA. Stripe Checkout only when Jim says go (processor fees only — no marketplace skim).
+            One funnel for beginners and early business buyers.
+            When Jim green-lights a paid lesson, checkout will use Stripe only so you pay
+            card-processing fees and nothing else.
           </p>
           <ul class="fine">
-            <li>Day-0: waitlist / free video</li>
-            <li>Later: paid lesson via Stripe Checkout</li>
+            <li>Day-0: free video on this page</li>
+            <li>Next: one paid starter pack, when he is ready</li>
             <li>Personal-use digital license only</li>
           </ul>
         </div>
-        <div>
+        <div class="buy-panel">
           <p class="price">$—</p>
-          <p class="fine" style="margin:0 0 0.85rem;">Stripe Checkout · fees only · not live</p>
+          <p class="fine" style="margin:0 0 0.9rem;">Stripe Checkout · processor fees only · not live</p>
           <a class="btn btn-disabled" href="#" aria-disabled="true" onclick="return false;">Buy — coming soon</a>
-          <p class="note">Checkout OFF until Jim’s yes through Sylas.</p>
+          <p class="note">Checkout stays off until Jim says yes through Sylas.</p>
         </div>
       </div>
     </section>
 
     <section>
       <div class="legal">
-        <p><strong>License (draft):</strong> Personal-use digital license only. Stream/download for your own use.
-        No redistribute, resell, share credentials, or public posting. Jim Howard retains all rights in scripts, performance, face, and voice.</p>
-        <p style="margin-bottom:0"><strong>Refund (draft A):</strong> 14-day refund if you have not accessed/downloaded the files.
-        After access: all sales final except verified delivery failure. No outcome guarantees.</p>
+        <p>
+          <strong>License (draft):</strong>
+          You get a personal-use digital license only.
+          You may stream or download the materials for your own learning.
+          You may not redistribute them, resell them, share login credentials, or post them publicly.
+          Jim Howard keeps all rights in the scripts, performance, face, and voice.
+        </p>
+        <p>
+          <strong>Refund (draft):</strong>
+          If you have not accessed or downloaded the files, you can ask for a refund within 14 days.
+          After you access the files, sales are final except when delivery fails and we can verify it.
+          These lessons do not promise job outcomes, income, or any other result.
+        </p>
       </div>
     </section>
 
     <footer>
       <div>© Technodaddy · Jim Howard</div>
-      <div style="margin-top:0.35rem">Preview: GitHub Pages · Stack: Pages + Stripe Checkout (off)</div>
+      <div style="margin-top:0.35rem">Preview on GitHub Pages · Stripe Checkout off · one page, one path</div>
     </footer>
   </div>
 </body>
