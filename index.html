@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Technodaddy — AI &amp; tech in plain English</title>
+  <meta name="description" content="Technodaddy: plain-English tech and AI lessons for beginners and busy people. Free teaser. Courses coming." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14212b;
+      --paper: #f7f4ee;
+      --card: #ffffff;
+      --accent: #0f6e56;
+      --accent-2: #c45c26;
+      --line: #d9d2c5;
+      --muted: #5c6670;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", system-ui, sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+    a { color: var(--accent); }
+    .wrap { width: min(920px, calc(100% - 2rem)); margin-inline: auto; }
+    .top {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.1rem 0; border-bottom: 1px solid var(--line);
+    }
+    .brand {
+      font-family: "Fraunces", Georgia, serif;
+      font-weight: 700; font-size: 1.35rem; letter-spacing: -0.02em;
+    }
+    .pill {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.06em; color: var(--accent);
+      background: #e4f3ee; padding: 0.35rem 0.65rem; border-radius: 999px;
+    }
+    header.hero { padding: 3.25rem 0 2rem; }
+    .eyebrow {
+      color: var(--accent-2); font-weight: 700; font-size: 0.85rem;
+      text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 0.75rem;
+    }
+    h1 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2.1rem, 5vw, 3.2rem);
+      line-height: 1.12; letter-spacing: -0.03em; margin: 0 0 1rem;
+    }
+    .lede { font-size: 1.15rem; color: var(--muted); max-width: 38rem; margin: 0 0 1.5rem; }
+    .row { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+    .btn {
+      display: inline-block; text-decoration: none; font-weight: 700;
+      padding: 0.85rem 1.15rem; border-radius: 10px; border: 2px solid transparent;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+    .btn-disabled {
+      background: #cfc8bb; color: #6b6458; cursor: not-allowed;
+      border: 2px dashed #9e9586;
+    }
+    .player {
+      margin: 2rem 0 0; background: #0d141a; border-radius: 14px; overflow: hidden;
+      border: 1px solid #243040; box-shadow: 0 18px 40px rgba(20,33,43,0.12);
+    }
+    .player video { width: 100%; display: block; background: #000; max-height: 520px; }
+    .player .cap {
+      padding: 0.75rem 1rem; color: #b7c0c8; font-size: 0.85rem;
+      border-top: 1px solid #243040;
+    }
+    .player .placeholder {
+      padding: 3rem 1.25rem; text-align: center; color: #b7c0c8;
+    }
+    section { padding: 2.25rem 0; }
+    h2 {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.6rem; margin: 0 0 0.75rem; letter-spacing: -0.02em;
+    }
+    .card {
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 14px; padding: 1.25rem 1.35rem;
+    }
+    .sku {
+      display: grid; gap: 1rem;
+      grid-template-columns: 1.4fr 0.8fr; align-items: start;
+    }
+    @media (max-width: 720px) { .sku { grid-template-columns: 1fr; } }
+    .price {
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 2.4rem; margin: 0; color: var(--accent);
+    }
+    .fine { color: var(--muted); font-size: 0.9rem; }
+    .legal {
+      font-size: 0.85rem; color: var(--muted);
+      background: #efeae1; border-radius: 12px; padding: 1rem 1.1rem;
+    }
+    .legal strong { color: var(--ink); }
+    footer {
+      padding: 2rem 0 3rem; border-top: 1px solid var(--line);
+      color: var(--muted); font-size: 0.85rem;
+    }
+    .note {
+      margin-top: 0.75rem; font-size: 0.8rem; color: var(--accent-2); font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">Technodaddy</div>
+      <div class="pill">Since 1995 · plain English</div>
+    </div>
+
+    <header class="hero">
+      <p class="eyebrow">Learning academy</p>
+      <h1>Tech and AI, explained like a human.</h1>
+      <p class="lede">
+        Jim Howard teaches technical ideas to non-technical people —
+        older adults, curious beginners, and teams just getting started with AI.
+        No jargon theater. No outcome guarantees. Just clear lessons.
+      </p>
+      <div class="row">
+        <a class="btn btn-primary" href="#teaser">Watch the free teaser</a>
+        <a class="btn btn-ghost" href="#course">See the course (checkout off)</a>
+      </div>
+    </header>
+
+    <section id="teaser">
+      <h2>Free teaser</h2>
+      <p class="fine">Lead magnet — not a paid SKU. Shareable when hosted publicly.</p>
+      <div class="player">
+        <div class="placeholder">
+          <strong style="color:#fff;display:block;margin-bottom:0.5rem;">Teaser file pending media push</strong>
+          Local QA cut: <code>ghe-demo-hires-teaser-v2i.mp4</code> · will land at <code>media/teaser.mp4</code><br />
+          Or swap to public YouTube embed when Jim picks a host.
+        </div>
+        <div class="cap">GHE Demo teaser (v2i) · free · waitlist CTA in cut · public YouTube/Vimeo optional later</div>
+      </div>
+    </section>
+
+    <section id="course">
+      <h2>First course (Day-0)</h2>
+      <div class="card sku">
+        <div>
+          <h3 style="margin:0 0 0.4rem;font-family:Fraunces,Georgia,serif;">AI in Plain English — starter pack</h3>
+          <p class="fine" style="margin:0 0 0.9rem;">
+            Preferred explore SKU: tight 3-pack (~$59) or single lesson (~$29).
+            Pricing blank on this page until Jim locks the SKU. Delivery via Stripe Checkout (direct).
+          </p>
+          <ul class="fine">
+            <li>One funnel — beginners + early business buyers</li>
+            <li>Instant access email after purchase (when live)</li>
+            <li>Personal-use digital license only</li>
+          </ul>
+        </div>
+        <div>
+          <p class="price">$—</p>
+          <p class="fine" style="margin:0 0 0.85rem;">Stripe Checkout · fees only · not live</p>
+          <!-- Swap href for Stripe Payment Link / Checkout URL when Jim says yes. -->
+          <a class="btn btn-disabled" href="#" aria-disabled="true" onclick="return false;">Buy — coming soon</a>
+          <p class="note">Checkout OFF until Jim’s yes through Sylas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="legal">
+        <p><strong>License (draft):</strong> Personal-use digital license only. Stream/download for your own use.
+        No redistribute, resell, share credentials, or public posting. Jim Howard retains all rights in scripts, performance, face, and voice.</p>
+        <p style="margin-bottom:0"><strong>Refund (draft A):</strong> 14-day refund if you have not accessed/downloaded the files.
+        After access: all sales final except verified delivery failure. No outcome guarantees.</p>
+      </div>
+    </section>
+
+    <footer>
+      <div>© Technodaddy · Jim Howard · draft on GitHub Pages</div>
+      <div style="margin-top:0.35rem">Domain: technodaddy.com (DNS cutover waits on Jim) · Stack: Pages + Stripe Checkout</div>
+    </footer>
+  </div>
+</body>
+</html>
